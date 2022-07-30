@@ -44,8 +44,9 @@ import '@ionic/react/css/typography.css';
 // Routing libs
 import { IonNavigationContext } from '@assiri/ionic-react-router';
 import {
-  DataBrowserRouter,
+ BrowserRouter,
   Navigate,
+   Routes,
   Route,
   useLocation,
 } from 'react-router-dom';
@@ -57,13 +58,8 @@ setupIonicReact({
 export function App() {
 
   return(
-    <DataBrowserRouter
-      fallbackElement={
-        <div>
-          <h1>MISSING</h1>
-        </div>
-      }
-    >
+    <BrowserRouter>
+    <Routes>
       <Route
         element={
           <IonNavigationContext>
@@ -75,7 +71,8 @@ export function App() {
         <Route path="/profile/*" element={<IonPage><h1>Profile</h1></IonPage>} />
         <Route path="/profile/details" element={<IonPage><h1>Profile Details</h1></IonPage>} />
       </Route>
-    </DataBrowserRouter>
+       <Routes>
+    </BrowserRouter>
   )
 
 }
